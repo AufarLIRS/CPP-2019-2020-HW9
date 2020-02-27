@@ -1,20 +1,8 @@
 # CppSource
 
-Repo for Qt template homework on 2019/2020 C++ course
+Repo for 9th homework on 2019/2020 C++ course
 
 # Task 1
 
-...
-
-# Task 2
-
-...
-
-# Task 3
-
-...
-
-# Task 4
-
-...
-
+Обеспечьте вывод пути к выбранному пользователем файлу/папке.
+По нажатию на Print! должен распечатываться либо список файлов в папке, либо содержимое файла. 
