@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <memory>
+#include "filesystemclasses.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -26,6 +28,7 @@ private slots:
   void on_PrintPushButton_clicked();
 
 private:
+  std::shared_ptr<IPrintable> ptr;
   Ui::MainWindow* ui;
 };
 #endif  // MAINWINDOW_H

@@ -1,7 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "filesystemclasses.h"
-#include <memory>
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -12,8 +10,6 @@ MainWindow::~MainWindow()
 {
   delete ui;
 }
-
-static std::shared_ptr<IPrintable> ptr;
 
 void MainWindow::on_SelectFilePushButton_clicked()
 {
@@ -55,5 +51,6 @@ void MainWindow::on_SelectDirectoryPushButton_clicked()
 
 void MainWindow::on_PrintPushButton_clicked()
 {
-  ui->plainTextEdit->setPlainText(ptr->Print());
+  if (!ui->DirectoryLineEdit->text().isEmpty())
+    ui->plainTextEdit->setPlainText(ptr->Print());
 }
