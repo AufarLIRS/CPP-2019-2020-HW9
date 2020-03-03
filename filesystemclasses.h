@@ -18,7 +18,11 @@ public:
   virtual void SetPath(QString path) = 0;
 };
 
-class File : public IPrintable, public IHavePath
+class IHavePrintablePath : public IPrintable, public IHavePath
+{
+};
+
+class File : public IHavePrintablePath
 {
   QFile _file;
 
@@ -27,7 +31,7 @@ public:
   QString Print() override;
 };
 
-class Directory : public IPrintable, public IHavePath
+class Directory : public IHavePrintablePath
 {
   QDir _dir;
 

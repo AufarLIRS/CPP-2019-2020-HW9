@@ -28,7 +28,7 @@ private slots:
   void on_PrintPushButton_clicked();
 
 private:
-  std::shared_ptr<IPrintable> ptr;
+  std::shared_ptr<IHavePrintablePath> ptr;
   Ui::MainWindow* ui;
 };
 #endif  // MAINWINDOW_H
