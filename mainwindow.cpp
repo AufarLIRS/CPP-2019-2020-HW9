@@ -37,7 +37,7 @@ void MainWindow::on_SelectFilePushButton_clicked()
         ui->DirectoryLineEdit->setText(dialog.selectedFiles().at(0));
       break;
   }
-  ptr = std::make_shared<File>();
+  ptr = std::make_unique<File>();
   ptr->SetPath(ui->DirectoryLineEdit->text());
 }
 
@@ -45,7 +45,7 @@ void MainWindow::on_SelectDirectoryPushButton_clicked()
 {
   ui->DirectoryLineEdit->setText(QFileDialog::getExistingDirectory(
       this, tr("Open Directory"), "C:/", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks));
-  ptr = std::make_shared<Directory>();
+  ptr = std::make_unique<Directory>();
   ptr->SetPath(ui->DirectoryLineEdit->text());
 }
 
