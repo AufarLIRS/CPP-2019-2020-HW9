@@ -29,7 +29,7 @@ QString Directory::Print()
   directory_.setFilter(QDir::AllEntries | QDir::NoDotAndDotDot);
   auto str = directory_.entryInfoList();
   QString text = "";
-  foreach (auto s, str)
+  for (auto s : str)
   {
     text = text + s.filePath() + "\r\n";
   }
